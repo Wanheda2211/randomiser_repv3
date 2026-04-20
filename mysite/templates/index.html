@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+    <img src="{{ url_for('static', filename='prize.jpg') }}" style="width: 100%; border-radius: 8px;">
+    <h2>🎟️ Raffle Signup</h2>
+    <a href="/gallery" style="color: #007bff; text-decoration: none; font-size: 0.9em;">View Prize Gallery →</a>
+    
+    <p style="margin-top: 15px;">Tickets are <strong>£50 each</strong>.</p>
+    
+    <form action="/register" method="POST">
+        <input type="text" name="f_name" placeholder="First Name" required>
+        <input type="text" name="l_name" placeholder="Last Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <label style="font-size: 0.8em; display: block; margin-top: 10px;">Number of Tickets:</label>
+        <input type="number" name="count" min="1" max="4" value="1">
+        <button type="submit">Reserve Tickets</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>🏆 Raffle Draw</h2>
+    <p>Total Paid Tickets: {{ entries|length }}</p>
+    <button onclick="pickWinner()">Click to Draw Winner</button>
+    <div id="result" class="winner"></div>
+
+    <script>
+        function pickWinner() {
+            const entries = {{ entries|tojson }};
+            if (entries.length === 0) { alert("No paid entries!"); return; }
+            const winner = entries[Math.floor(Math.random() * entries.length)];
+            document.getElementById('result').innerHTML = winner.first_name + " " + winner.last_name + "<br><small>Ticket #" + winner.ticket_id + "</small>";
+        }
+    </script>
+{% endblock %}

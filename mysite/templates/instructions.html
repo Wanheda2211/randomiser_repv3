@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2 style="color: #d9534f;">Reserved</h2>
+    <p>To enter the draw, please complete your payment for <strong>{{ email }}</strong>.</p>
+
+    <div style="background: #f9f9f9; padding: 15px; border: 1px solid #eee; border-radius: 8px; text-align: left;">
+        <p><strong>Total Amount:</strong> £{{ price }}</p>
+        <hr>
+        <p><strong>Bank:</strong> [Bank Name]</p>
+        <p><strong>Account:</strong> [Account Number]</p>
+        <p><strong>Sort Code:</strong> [Sort Code]</p>
+        <p style="margin-top: 15px; font-weight: bold;">PAYMENT REFERENCE:</p>
+        <div style="background: #333; color: #fff; padding: 10px; border-radius: 4px; text-align: center; font-family: monospace;">
+            {{ email }}
+        </div>
+    </div>
+    <p style="font-size: 0.8em; color: #777; margin-top: 20px;">
+        Tickets are activated once payment is received with your email as the reference.
+    </p>
+    <a href="/" style="font-size: 0.8em; color: #007bff;">Back to Home</a>
+{% endblock %}

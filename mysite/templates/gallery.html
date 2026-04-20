@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>🖼️ Prize Gallery</h2>
+    <div class="gallery-grid">
+        <img src="{{ url_for('static', filename='prize.jpg') }}">
+        <img src="{{ url_for('static', filename='prize2.jpg') }}">
+        <img src="{{ url_for('static', filename='prize3.jpg') }}">
+        <img src="{{ url_for('static', filename='prize4.jpg') }}">
+    </div>
+    <p style="font-size: 0.9em; color: #666;">Detailed views of the raffle prize.</p>
+    <hr>
+    <a href="/" style="color: #007bff; text-decoration: none;">← Back to Signup</a>
+{% endblock %}
